@@ -16,7 +16,7 @@ def criarUsuario():
     novoUsuario["email"] = input("Coloque o e-mail: ")
     return novoUsuario
 
-    def exibirPorOrdemCadastro(listaUsuarios : list):
+def exibirPorOrdemCadastro(listaUsuarios : list):
     for umUsuario in listaUsuarios:
         print(umUsuario)        
 
@@ -24,4 +24,3 @@ def exibirPorOrdemAlfabetica(listaUsuarios : list):
     ordemAlfabetica = sorted(listaUsuarios, key=lambda obj: obj["nome"])
     for umUsuario in ordemAlfabetica:
         print(umUsuario)
-        
