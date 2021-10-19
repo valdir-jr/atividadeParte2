@@ -41,3 +41,49 @@ def alterarPorEmail(email, listaUsuarios):
         if (usuario["email"] == email):
             usuario['nome'] = nomeNovo
             return usuario   
+def main():
+    listaUsuarios = []
+
+    desenharMenu()
+    opcao = int(input("\nDigite qual a opcao desejada: "))
+
+    while(opcao != 0):
+        if(opcao == 1):
+            print("\n[OPTION]Cadastrar um novo usuário")
+            listaUsuarios.append(criarUsuario())
+            print("\n[SUCESS]Usuário Cadastrado")
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+        elif(opcao == 2):
+            print("\n[OPTION]Exibir por ordem de Cadastro")
+            exibirPorOrdemCadastro(listaUsuarios)
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+        elif(opcao == 3):
+            print("\n[OPTION]Exibir por ordem alfabética")
+            exibirPorOrdemAlfabetica(listaUsuarios)
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+        elif(opcao == 4):
+            print("\n[OPTION]Buscar usuário (nome)")
+            nome = str(input("Qual nome quer buscar? "))
+            print(verificarPorNome(nome,listaUsuarios))
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+        elif(opcao == 5):
+            print("\n[OPTION]Remover usuário (e-mail)")
+            email = input("Qual o e-mail do usuário que quer remover? ")
+            listaUsuarios.remove(removerPorEmail(email, listaUsuarios))
+            print("\n[SUCESS]Usuário removido")
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+        elif(opcao == 6):
+            print("\n[OPTION]Alterar usuário (e-mail)")
+            email = str(input("Qual é o email do usuário? "))
+            alterarPorEmail(email, listaUsuarios)
+            print("\n[SUCESS]Usuário alterado")
+            opcao = int(input("\nDigite qual a opcao desejada: "))
+
+
+if __name__ == "__main__" :
+    main()
