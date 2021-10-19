@@ -33,4 +33,11 @@ def verificarPorNome(nome, listaUsuarios):
 def removerPorEmail(email, listaUsuarios):
     for usuario in listaUsuarios:
         if (usuario["email"] == email):
-            return usuario        
+            return usuario     
+
+def alterarPorEmail(email, listaUsuarios):
+    nomeNovo = str(input("Qual será o novo nome do usuário? "))
+    for usuario in listaUsuarios:
+        if (usuario["email"] == email):
+            usuario['nome'] = nomeNovo
+            return usuario   
